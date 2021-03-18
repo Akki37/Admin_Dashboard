@@ -1,0 +1,80 @@
+.table_caontainer{
+    width: 100vw;
+    position: relative;
+    padding: 0 30px;
+}
+.table{
+    position: relative;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr {
+    text-align: left;
+    height: 45px;
+    
+}
+th{
+    border-bottom: 1.5px solid lightslategray ;
+    padding-bottom: 5px;
+    max-width: 350px;
+
+}
+td{
+    border-bottom: 1px solid rgba(157, 171, 185, 0.616);
+    padding: 0 5px 15px 5px;
+    font-weight: 200;
+    word-wrap: break-word;
+    max-width: 350px;
+}
+.viewdetail_btn{
+    position: relative;
+    background-color: #5EBEDF;
+    color: white;
+    border-style: none;
+    border-radius: 3px;
+    padding: 8px 10px;
+    margin-top: 3px;
+    outline: none;
+}
+.viewdetail_btn:hover,.viewdetail_btn:active{
+    cursor: pointer;
+    background-color: #21728d;
+}
+.btns_when_applied{
+    position: relative;
+}
+.shortlist,.shortlisted{
+    position: relative;
+    min-width: 30%;
+    background-color: #60d851;
+    color: white;
+    border-style: none;
+    border-radius: 3px;
+    padding: 8px 10px;
+    margin-top: 3px;
+    margin-right: 3px;
+    outline: none;
+}
+.shortlist:hover,.shortlist:active ,.shortlisted:hover,.shortlisted:active{
+    background-color: #3a8031;
+    cursor: pointer;
+}
+.reject,.rejected{
+    position: relative;
+    min-width: 30%;
+    background-color: #f03a2d;
+    color: white;
+    border-style: none;
+    border-radius: 3px;
+    padding: 8px 10px;
+    margin-top: 3px;
+    outline: none;
+}
+.reject:hover,.reject:active,.rejected:hover,.rejected:active{
+    background-color: #a8190e;
+    cursor: pointer;
+}
+.shortlisted,.rejected{
+    min-width: 40%;
+}

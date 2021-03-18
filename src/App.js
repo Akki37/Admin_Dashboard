@@ -9,23 +9,40 @@ import FullStack from "./FullStack";
 
 function App(props) {
   
+    // let button = document.getElementsByClassName("btn")
+    // console.log(button)
+    // for (let i = 0; i < button.length; i++) {
+    //     button[i].addEventListener("click", function() {
+    //     let current = document.getElementsByClassName("active")
+    //     console.log(current)
+    //      if(current.length>0){
+    //       console.log(true);
+    //       current[0].className= current[0].className.replace(" active", "");
+    //      }
+    //     this.className += " active";
+    //     console.log(this);
+    //     })}
+  
+
+  
   return (
     <div className="App">
-      <div>Admin Dashboard</div>
-       <div>
-         <Link to="/frontend">Front-End Developer</Link>
-         <Link to="/nodejs">Node.js Developer</Link>
-         <Link to="/meanstack">MEAN Stack Developer</Link>
-         <Link to="/fullstack">FULL Stack Developer</Link> 
+      <Route path="/:dev/:id" component={ShowDetails}/>
+      <div className="title_admin">Admin Dashboard</div>
+       <div className="job_titles">
+         <Link to="/frontend"> <button className="btn" >Front-End Developer</button></Link>
+         <Link to="/nodejs">   <button className="btn" >Node.js Developer</button></Link>
+         <Link to="/meanstack"><button className="btn" >MEAN Stack Developer</button></Link>
+         <Link to="/fullstack"><button className="btn" >FULL Stack Developer</button></Link> 
        </div>
        <Route path="/frontend"   component={FrontEnd}/>
        <Route path="/nodejs"   component={NodeJs}/>
        <Route path="/meanstack"   component={MeanStack}/>
        <Route path="/fullstack"   component={FullStack}/>
-       <Route path="/:dev/:id" component={ShowDetails}/>
+       
      
     </div>
-  );
+  )
 }
 
 export default App;

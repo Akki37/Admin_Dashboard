@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react"
 import axios from "axios"
+import "./All_Job_Title.css"
 import CandidatesTable from "./CandidatesTable"
 const NodeJs=(props)=>{
     const[nodeJsDev,setNodeJsDev]=useState([])
@@ -27,9 +28,9 @@ const NodeJs=(props)=>{
         setNodeJsDev(result)
     }
     return(
-        <div>
-            <div>Node.js Developers</div>
-            <p>List of candidates applied for Node.js Developer job</p>
+        <div className="Candidates_job_container">
+            <div className="job_title">Node.js Developers</div>
+            <p className="job_para">List of candidates applied for Node.js Developer job</p>
             <CandidatesTable data={nodeJsDev}  dev={"nodejs"}changeStatus={changeStatus}/>
         </div>
     )

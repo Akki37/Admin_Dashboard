@@ -1,6 +1,7 @@
 import React from "react"
 import {Link} from "react-router-dom"
 import axios from "axios"
+import "./CandidatesTable.css"
 
 const CandidatesTable=(props)=>{
     const{data,dev,changeStatus}=props
@@ -8,7 +9,6 @@ const CandidatesTable=(props)=>{
     function updateStatus(string,id){
        axios.put(`http://dct-application-form.herokuapp.com/users/application-form/update/${id}`,{status:string})
        .then((res)=>{
-           console.log(res.data)
            changeStatus(res.data)
        })
        .catch((err)=>{
@@ -17,12 +17,12 @@ const CandidatesTable=(props)=>{
     }
 
     return(
-        <div>
-            <table>
+        <div className="table_caontainer">
+            <table className="table">
                 <thead>
                     <tr>
                     <th>Name</th>
-                    <th>Technical Skills</th>
+                    <th >Technical Skills</th>
                     <th>Experience</th>
                     <th>Applied Date</th>
                     <th>View Details</th>
@@ -35,20 +35,20 @@ const CandidatesTable=(props)=>{
                             <td>{user.name}</td>
                             <td>{user.skills}</td>
                             <td>{user.experience}</td>
-                            <td>{user.createdAt}</td>
-                            <td><Link to={`/${dev}/${(user._id)}`}><button>View Details</button></Link></td>
+                            <td>{new Date(user.createdAt).toLocaleDateString()}</td>
+                            <td><Link to={`/${dev}/${user._id}`}><button className="viewdetail_btn">View Details</button></Link></td>
                             <td>
                             {user.status==="applied" ? 
-                            <div>
-                                <button onClick={()=>{updateStatus("shortlisted",user._id)}}>Shortlist</button>
-                                <button onClick={()=>{updateStatus("rejected",user._id)}}>Reject</button>
+                            <div className="btns_when_applied">
+                                <button className="shortlist" onClick={()=>{updateStatus("shortlisted",user._id)}}>Shortlist</button>
+                                <button className="reject"onClick={()=>{updateStatus("rejected",user._id)}}>Reject</button>
                             </div>:
                             user.status==="shortlisted" ? 
                             <div>
-                                <button onClick={()=>{updateStatus("applied",user._id)}}>Shortlisted</button>
+                                <button className="shortlisted" onClick={()=>{updateStatus("applied",user._id)}}>Shortlisted</button>
                             </div>:
                             <div>
-                                <button onClick={()=>{updateStatus("applied",user._id)}}>Rejected</button>
+                                <button className="rejected" onClick={()=>{updateStatus("applied",user._id)}}>Rejected</button>
                             </div>
                             }</td>
                         </tr>

@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react"
 import axios from "axios"
+import "./All_Job_Title.css"
 import CandidatesTable from "./CandidatesTable"
 const MeanStack=(props)=>{
 
@@ -29,9 +30,9 @@ const MeanStack=(props)=>{
     }
 
     return(
-        <div>
-            <div>MEAN Stack Developers</div>
-            <p>List of candidates applied for MEAN Stack Developer job</p>
+        <div className="Candidates_job_container">
+            <div className="job_title">MEAN Stack Developers</div>
+            <p className="job_para">List of candidates applied for MEAN Stack Developer job</p>
             <CandidatesTable data={meanStackDev} dev={"meanstack"} changeStatus={changeStatus}/>
         </div>
     )
