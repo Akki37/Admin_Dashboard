@@ -31,7 +31,7 @@ const NodeJs=(props)=>{
         <div className="Candidates_job_container">
             <div className="job_title">Node.js Developers</div>
             <p className="job_para">List of candidates applied for Node.js Developer job</p>
-            <CandidatesTable data={nodeJsDev}  dev={"nodejs"}changeStatus={changeStatus}/>
+            <CandidatesTable data={nodeJsDev}  dev={"nodejs"} changeStatus={changeStatus}/>
         </div>
     )
 }

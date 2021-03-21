@@ -19,7 +19,7 @@ const ShowDetails=(props)=>{
       <div className="pop_up_Container">
         <div className="pop_Up">
            <div className="name_head">
-              <div>{user.name} Profile</div>
+              <div>{user.name}-Profile</div>
               <Link to={`/${dev}`}><i className="fas fa-times"></i></Link>
             </div>
             <div className="details_container">

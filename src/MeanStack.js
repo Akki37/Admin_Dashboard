@@ -9,7 +9,7 @@ const MeanStack=(props)=>{
         axios.get("http://dct-application-form.herokuapp.com/users/application-forms")
         .then((res)=>{
           const meanstack = res.data.filter((user)=>{
-            return user.jobTitle === "Node.js Developer"
+            return user.jobTitle === "MEAN Stack Developer"
           })
           setMeanStackDev(meanstack)
         })
